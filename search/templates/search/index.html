@@ -1,0 +1,38 @@
+{% extends "search/base.html"  %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <div class="content-section" >
+        <form method="GET" action="/details" >
+            {% csrf_token %}
+            {{ filter.form.as_p }}
+                <fieldset class="form-group" >
+
+                    <div class="form-group" align="center">
+                        <input type="search" name="query" placeholder="Search Here!" id="query" >
+                    </div>
+                    {{ form|crispy }}
+                </fieldset>
+
+                <div class="form-group" align="center">
+                    <button class="btn btn-outline-info" type="submit"  >Search</button>
+            {#        <a class = "btn btn-outline-primary" href="">Search</a>#}
+                </div>
+        </form>
+{#{% for obj in filter.qs %}#}
+{#    {{ obj.Peptide_Sequence }}#}
+{#{% endfor %}#}
+</div >
+{#    <div class="content-section">#}
+{#    {% for search in searchs %}#}
+{#        <div class="jumbotron jumbotron-fluid">#}
+{#            <h3 class="display-6"> Peptide Sequence: {{ search.Peptide_Sequence }} </h3>#}
+{#            <hr class="my-4">#}
+{#            <p>For Sale: {{ search.For_Sale }}</p>#}
+{#            <p>{{ search.Peptide_Position }}</p>#}
+{#        </div>#}
+{#    {% endfor %}#}
+{#    </div>#}
+{% endblock content %}
+

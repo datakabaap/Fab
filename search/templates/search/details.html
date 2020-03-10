@@ -1,0 +1,288 @@
+{% extends "search/base.html" %}
+{% block content %}
+
+    <div class="content-section">
+        <h6>Search Results :</h6>
+        {% if allSearch|length < 1 %}
+            <p> No search results</p>
+            Your search query: <b>{{ query }} </b> - did not match any document <br>
+            Suggestion:
+            <ul>
+                <li>Try different keywords.</li>
+                <li>Make sure that all words are spelled correctly</li>
+                <li>Try lower keyword</li>
+            </ul>
+        {% endif %}
+        {% for search in allSearch %}
+            <div class="jumbotron jumbotron-fluid">
+
+
+                <div> Peptide Sequence: <span
+                        class="d-inline p-2 bg-primary text-white"> {{ search.Peptide_Sequence }}</span>
+                </div>
+                <hr class="my-4">
+                <p>For Sale: {{ search.For_Sale }}</p>
+                <p> Old Catelog: {{ search.Old_Catalog }}</p>
+                <p> Final Catelog: {{ search.Final_Catalog }}</p>
+                <p> Peptide: {{ search.Peptide }}</p>
+                <p> Target Name: {{ search.Target_Name }}</p>
+                <p> Accession No.: {{ search.Accession_No }}</p>
+                <p> Synonym: {{ search.Synonym }}</p>
+                <p> Theoritical: {{ search.CR_Theoritical }}</p>
+                <p> Experimental: {{ search.CR_Experimental }}</p>
+                <p> Category: {{ search.Category }}</p>
+                <p> Peptide Position: {{ search.Peptide_Position }}</p>
+                <p> Peptide Lot No.: {{ search.Peptide_Lot_No }}</p>
+                <p> Host: {{ search.Host }}</p>
+                <p> Peptides Freezer Box No.: {{ search.FREEZER_BOX }}</p>
+                <p> Peptide Used: {{ search.Peptide_Used }}</p>
+                <p> Origin: {{ search.ORIGIN }}</p>
+                <p> Conjugates Returened F#: {{ search.Retrnd_Conj_F_No }}</p>
+                <p> No. of Tubes: {{ search.No_Tubes }}</p>
+                <p> Rabbit 1: {{ search.Rabbit_1 }}</p>
+                <p> Rabbit 2: {{ search.Rabbit_2 }}</p>
+                <p> Extended Rabbit 1: {{ search.EXTD_Rabbit_1 }}</p>
+                <p> Extended Rabbit 2: {{ search.EXTD_Rabbit_2 }}</p>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Serum</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">Rb 1 (ml) : {{ search.SRM_Rb_1 }}</p>
+                                        <p class="card-text">No of Bottles : {{ search.No_Bottle_Rb1 }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">Rb 2 (ml) : {{ search.SRM_Rb_2 }}</p>
+                                        <p class="card-text">No of Bottles : {{ search.No_Bottle_Rb2 }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">All Product Serum Location</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">Box No. : {{ search.SRM_BOX_No }}</p>
+                                        <p class="card-text">Freezer : {{ search.SRM_FRZR_No }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">TB Location</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">TB Box No. : {{ search.TB_BOX_No }}</p>
+                                        <p class="card-text">TB Freezer : {{ search.TB_FRZR_No }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <p>Not in location: {{ search.NOT_in_Location }}</p>
+                <div class="card bg-light mb-3" style="max-width:30rem;">
+                    <div class="card-header">Special Notes</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">Comments & Lot Good-Abcam : {{ search.COMNT_n_LotNo }}</p>
+                                        <p class="card-text">TB Freezer : {{ search.SPCL_Notes }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Purification</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Protien A</h5>
+                                        <p class="card-text">Rabbit 1 : {{ search.PURFN_PROTN_A_RABT_1 }}</p>
+                                        <p class="card-text">Rabbit 2 : {{ search.PURFN_PROTN_A_RABT_2 }}</p>
+                                        <h5 class="card-title">Affinity Purification</h5>
+                                        <p class="card-text">Rabbit 1 : {{ search.AFFNTY_PURFN_RABBT_1 }}</p>
+                                        <p class="card-text">Rabbit 2 : {{ search.AFFNTY_PURFN_RABBT_2 }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Antibody Products</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <h5 class="card-title">Protien A</h5>
+                                        <p class="card-text">Rabbit 1 : {{ search.ANTBDY_PROTN_A_RABBT_1 }}</p>
+                                        <p class="card-text">Lot No. : {{ search.ANTBDY_PROTN_A_RABBT_1_LOT_No }}</p>
+                                        <p class="card-text">Rabbit 2 : {{ search.ANTBDY_PROTN_A_RABBT_2 }}</p>
+                                        <p class="card-text">Lot No. : {{ search.ANTBDY_PROTN_A_RABBT_2_LOT_No }}</p>
+                                        <h5 class="card-title">Affinity Purified</h5>
+                                        <p class="card-text">Rabbit 1 : {{ search.AFFINITY_PURIFIED_RABBIT_1 }}</p>
+                                        <p class="card-text">Lot No.
+                                            : {{ search.AFFINITY_PURIFIED_RABBIT_1_LOT_No }}</p>
+                                        <p class="card-text">Rabbit 2 : {{ search.AFFINITY_PURIFIED_RABBIT_2 }}</p>
+                                        <p class="card-text">Lot No.
+                                            : {{ search.AFFINITY_PURIFIED_RABBIT_2_LOT_No }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Product Location</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+
+                                        <p class="card-text">Box : {{ search.PRODUCT_LOCATION_BOX }}</p>
+                                        <p class="card-text">Freezer : {{ search.PRODUCT_LOCATION_FRZR }}</p>
+                                        <p class="card-text">2015-2018 Inventory
+                                            : {{ search.PRODUCT_LOCATION_2015_18_INVTRY }}</p>
+                                        <p class="card-text">Sampler Pack : {{ search.PRODUCT_LOCATION_SMPLR_PACK }}</p>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:30rem;">
+                    <div class="card-header">Conjugates</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <h5 class="card-title">FITC</h5>
+                                        <p class="card-text">Rabbit No. Sampler Pack
+                                            : {{ search.CNJGTS_FITC_SMPL_PACK }}</p>
+                                        <p class="card-text">Rabbit No : {{ search.CNJGTS_FITC_RABBIT_No }}</p>
+                                        <p class="card-text">Tubes Location 1
+                                            : {{ search.CNJGTS_FITC_TUBES_LOCTN_1 }}</p>
+                                        <p class="card-text">Tubes Location 2
+                                            : {{ search.CNJGTS_FITC_TUBES_LOCTN_2 }}</p>
+                                        <p class="card-text">Date : {{ search.CNJGTS_FITC_TUBES_DATE }}</p>
+                                        <h5 class="card-title">Biotin</h5>
+                                        <p class="card-text">Tubes Location: {{ search.CNJGTS_BIOTIN_LOCTN }}</p>
+                                        <p class="card-text">Tubes Location FITC & Biotin
+                                            : {{ search.CNJGTS_BIOTIN_LOCTN_FITC_Biotin }}</p>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:30rem;">
+                    <div class="card-header">Web Control</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">Tubes No. : {{ search.WB_CONTRL_TUBES_No }}</p>
+
+                                        <h5 class="card-title">Location</h5>
+                                        <p class="card-text">Box Freezer: {{ search.WB_CONTRL_LOCTN_BOX_FRZR }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:30rem;">
+                    <div class="card-header">Columns</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">Name : {{ search.COLMN_NAME }}</p>
+                                        <p class="card-text">Column Location, Box No.
+                                            : {{ search.COLMN_LOCTN_BOX_No }}</p>
+                                        <p class="card-text">Date : {{ search.COLMN_DATE }}</p>
+
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:30rem;">
+                    <div class="card-header">Remarks & Esp Notes</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">Remarks : {{ search.REMARKS }}</p>
+                                        <p class="card-text">Esp Notes : {{ search.ESP_NOTES }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:30rem;">
+                    <div class="card-header">All Products Lot Nos</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text">Lot No : {{ search.LOT_No }}</p>
+                                        <p class="card-text">Aliqote (Updated 7/7/10)
+                                            : {{ search.ALL_PRDCT_LOT_No_2 }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="nav-link">
+        <a href="{% url 'search-home' %}" class="btn btn-primary">Go back to search</a>
+    </div>
+{% endblock content %}
+
+
+
+

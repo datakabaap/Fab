@@ -10,7 +10,14 @@
                 <fieldset class="form-group" >
 
                     <div class="form-group" align="center">
-                        <input type="search" name="query" placeholder="Search Here!" id="query" >
+                        <table>
+                            <tr>
+                                <td><h5>Peptide Sequence: </h5></td>
+                                <td><input type="search" name="query" placeholder="Search Here!" id="query" ></td>
+                            </tr>
+
+                        </table>
+
                     </div>
                     {{ form|crispy }}
                 </fieldset>

@@ -1,8 +1,10 @@
 {% extends "search/base.html" %}
 {% block content %}
 
-    <div class="content-section">
-        <h6>Search Results :</h6>
+    <div class="content-section" >
+        <div class = "alert alert-success" role="alert">
+            Search Results : <b>{{ allSearch.count }}</b> Result(s) found.
+        </div>
         {% if allSearch|length < 1 %}
             <p> No search results</p>
             Your search query: <b>{{ query }} </b> - did not match any document <br>
@@ -14,35 +16,227 @@
             </ul>
         {% endif %}
         {% for search in allSearch %}
-            <div class="jumbotron jumbotron-fluid">
+
+            <div class="jumbotron jumbotron-fluid" >
 
 
                 <div> Peptide Sequence: <span
                         class="d-inline p-2 bg-primary text-white"> {{ search.Peptide_Sequence }}</span>
                 </div>
                 <hr class="my-4">
-                <p>For Sale: {{ search.For_Sale }}</p>
-                <p> Old Catelog: {{ search.Old_Catalog }}</p>
-                <p> Final Catelog: {{ search.Final_Catalog }}</p>
-                <p> Peptide: {{ search.Peptide }}</p>
-                <p> Target Name: {{ search.Target_Name }}</p>
-                <p> Accession No.: {{ search.Accession_No }}</p>
-                <p> Synonym: {{ search.Synonym }}</p>
-                <p> Theoritical: {{ search.CR_Theoritical }}</p>
-                <p> Experimental: {{ search.CR_Experimental }}</p>
-                <p> Category: {{ search.Category }}</p>
-                <p> Peptide Position: {{ search.Peptide_Position }}</p>
-                <p> Peptide Lot No.: {{ search.Peptide_Lot_No }}</p>
-                <p> Host: {{ search.Host }}</p>
-                <p> Peptides Freezer Box No.: {{ search.FREEZER_BOX }}</p>
-                <p> Peptide Used: {{ search.Peptide_Used }}</p>
-                <p> Origin: {{ search.ORIGIN }}</p>
-                <p> Conjugates Returened F#: {{ search.Retrnd_Conj_F_No }}</p>
-                <p> No. of Tubes: {{ search.No_Tubes }}</p>
-                <p> Rabbit 1: {{ search.Rabbit_1 }}</p>
-                <p> Rabbit 2: {{ search.Rabbit_2 }}</p>
-                <p> Extended Rabbit 1: {{ search.EXTD_Rabbit_1 }}</p>
-                <p> Extended Rabbit 2: {{ search.EXTD_Rabbit_2 }}</p>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">For Sale</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> {{ search.For_Sale }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Catelogs</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> Old Catelog: {{ search.Old_Catalog }}</p>
+                                        <p class="card-text"> Final Catelog: {{ search.Final_Catalog }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Peptide</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> {{ search.Peptide }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Target Name</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> {{ search.Target_Name }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Accession No.</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> {{ search.Accession_No }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Synonym</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> {{ search.Synonym }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Cross Reactivity</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> Theoritical: {{ search.CR_Theoritical }}</p>
+                                        <p class="card-text"> Experimental: {{ search.CR_Experimental }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Category</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> {{ search.Category }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Conjugates Returned</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> Conjugates Returened F#: {{ search.Retrnd_Conj_F_No }}</p>
+                                        <p class="card-text"> No. of Tubes: {{ search.No_Tubes }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Rabbits</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> Rabbit 1: {{ search.Rabbit_1 }}</p>
+                                        <p class="card-text"> Rabbit 2: {{ search.Rabbit_2 }}</p>
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Extended Rabbits</div>
+                    <div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+
+                                        <p class="card-text"> Extended Rabbit 1: {{ search.EXTD_Rabbit_1 }}</p>
+                                        <p class="card-text"> Extended Rabbit 2: {{ search.EXTD_Rabbit_2 }}</p>
+
+                                    </div>
+                                </td>
+
+                            </tr>
+
+                        </table>
+                    </div>
+
+                </div>
+
+
+                <div class="card bg-light mb-3" style="max-width:20rem;">
+                    <div class="card-header">Peptide</div>
+                    <div>
+                        <table>
+
+                            <tr>
+                                <td>
+                                    <div class="card-body">
+                                        <p class="card-text"> Peptide Position: {{ search.Peptide_Position }}</p>
+                                        <p class="card-text"> Peptide Lot No.: {{ search.Peptide_Lot_No }}</p>
+                                        <p class="card-text"> Host: {{ search.Host }}</p>
+                                        <p class="card-text"> Peptides Freezer Box No.: {{ search.FREEZER_BOX }}</p>
+                                        <p class="card-text"> Peptide Used: {{ search.Peptide_Used }}</p>
+                                        <p class="card-text"> Origin: {{ search.ORIGIN }}</p>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
                 <div class="card bg-light mb-3" style="max-width:20rem;">
                     <div class="card-header">Serum</div>
                     <div>
@@ -92,13 +286,14 @@
                                     <div class="card-body">
                                         <p class="card-text">TB Box No. : {{ search.TB_BOX_No }}</p>
                                         <p class="card-text">TB Freezer : {{ search.TB_FRZR_No }}</p>
+                                        <p class="card-text">Not in location: {{ search.NOT_in_Location }}</p>
                                     </div>
                                 </td>
                             </tr>
                         </table>
                     </div>
                 </div>
-                <p>Not in location: {{ search.NOT_in_Location }}</p>
+
                 <div class="card bg-light mb-3" style="max-width:30rem;">
                     <div class="card-header">Special Notes</div>
                     <div>

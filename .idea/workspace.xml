@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ecccd133-8182-4b71-915f-0c729fae2b1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/req.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/templates/search/details.html" beforeDir="false" afterPath="$PROJECT_DIR$/search/templates/search/details.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/search/templates/search/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/search/templates/search/index.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -139,8 +139,18 @@
       <workItem from="1584010245389" duration="1671000" />
       <workItem from="1584029338693" duration="731000" />
       <workItem from="1584031914567" duration="2495000" />
-      <workItem from="1584079294821" duration="1290000" />
+      <workItem from="1584079294821" duration="3699000" />
+      <workItem from="1584383454714" duration="3083000" />
+      <workItem from="1584425938805" duration="10281000" />
     </task>
+    <task id="LOCAL-00001" summary="added requirement.txt">
+      <created>1584080810771</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1584080810772</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,6 +168,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="added requirement.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="added requirement.txt" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

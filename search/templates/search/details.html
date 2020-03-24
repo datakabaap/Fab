@@ -1,7 +1,7 @@
 {% extends "search/base.html" %}
 {% block content %}
 
-    <div class="content-section" >
+    <div class="content-section" xmlns="http://www.w3.org/1999/html">
         <div class = "alert alert-success" role="alert">
             Search Results : <b>{{ allSearch.count }}</b> Result(s) found.
         </div>
@@ -19,9 +19,10 @@
 
             <div class="jumbotron jumbotron-fluid" >
 
-
-                <div> Old Catalog:
-                    <span class="d-inline p-2 bg-primary text-white"> {{ search.Old_Catalog }}</span>
+                <div>
+                    Old Catalog:  <span class="d-inline p-2 bg-primary text-white"> {{ search.Old_Catalog }}</span>
+                </div>
+                <div style="margin-top: 15px">
                     New Catalog: <span class="d-inline p-2 bg-dark text-white"> {{ search.Final_Catalog }}</span>
                 </div>
                 <hr class="my-4">

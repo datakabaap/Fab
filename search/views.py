@@ -16,7 +16,10 @@ def home(request):
 def details(request):
     query = request.GET['query']
     # allSearch = Search.objects.all()
-    allSearch = Search.objects.filter(Peptide_Sequence__icontains=query)
+    allSearch = Search.objects.filter(Old_Catalog__icontains=query)
+    # allSearchOld = Search.objects.filter(Old_Catalog__icontains=query)
+    # allSearchNew = Search.objects.filter(Final_Catalog__icontains=query)
+    # allSearch = allSearchOld.union(allSearchNew, all=True)
 
     params = {'allSearch': allSearch, 'query': query}
     return render(request, 'search/details.html', params)

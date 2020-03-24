@@ -20,8 +20,9 @@
             <div class="jumbotron jumbotron-fluid" >
 
 
-                <div> Peptide Sequence: <span
-                        class="d-inline p-2 bg-primary text-white"> {{ search.Peptide_Sequence }}</span>
+                <div> Old Catalog:
+                    <span class="d-inline p-2 bg-primary text-white"> {{ search.Old_Catalog }}</span>
+                    New Catalog: <span class="d-inline p-2 bg-dark text-white"> {{ search.Final_Catalog }}</span>
                 </div>
                 <hr class="my-4">
                 <div class="card bg-light mb-3" style="max-width:20rem;">
@@ -41,24 +42,24 @@
                     </div>
 
                 </div>
-                <div class="card bg-light mb-3" style="max-width:20rem;">
-                    <div class="card-header">Catelogs</div>
-                    <div>
-                        <table>
-                            <tr>
-                                <td>
-                                    <div class="card-body">
-                                        <p class="card-text"> Old Catelog: {{ search.Old_Catalog }}</p>
-                                        <p class="card-text"> Final Catelog: {{ search.Final_Catalog }}</p>
-                                    </div>
-                                </td>
-
-                            </tr>
-
-                        </table>
-                    </div>
-
-                </div>
+{#                <div class="card bg-light mb-3" style="max-width:20rem;">#}
+{#                    <div class="card-header">Peptide Sequence</div>#}
+{#                    <div>#}
+{#                        <table>#}
+{#                            <tr>#}
+{#                                <td>#}
+{#                                    <div class="card-body">#}
+{#                                        <p class="card-text"> {{ search.Peptide_Sequence }}</p>#}
+{#                                        <p class="card-text"> Final Catelog: {{ search.Final_Catalog }}</p>#}
+{#                                    </div>#}
+{#                                </td>#}
+{##}
+{#                            </tr>#}
+{##}
+{#                        </table>#}
+{#                    </div>#}
+{##}
+{#                </div>#}
                 <div class="card bg-light mb-3" style="max-width:20rem;">
                     <div class="card-header">Peptide</div>
                     <div>
@@ -216,7 +217,7 @@
                 </div>
 
 
-                <div class="card bg-light mb-3" style="max-width:20rem;">
+                <div class="card bg-light mb-3" style="max-width:30rem;">
                     <div class="card-header">Peptide</div>
                     <div>
                         <table>
@@ -224,6 +225,7 @@
                             <tr>
                                 <td>
                                     <div class="card-body">
+                                        <p class="card-text"> Peptide Sequence: {{ search.Peptide_Sequence }}</p>
                                         <p class="card-text"> Peptide Position: {{ search.Peptide_Position }}</p>
                                         <p class="card-text"> Peptide Lot No.: {{ search.Peptide_Lot_No }}</p>
                                         <p class="card-text"> Host: {{ search.Host }}</p>

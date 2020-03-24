@@ -79,7 +79,7 @@ class Search(models.Model):
     Column49 = models.CharField(max_length=500, null=True)
 
     def __str__(self, *args, **kwargs):
-        return self.Peptide_Sequence
+        return self.Old_Catalog
 
 
 
